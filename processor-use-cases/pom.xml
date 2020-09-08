@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.processor.use_cases</groupId>
+    <artifactId>processor-use-cases</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>processor-use-cases</name>
+    <description>Examples about how to use Java annotation processes provided by processor module</description>
+
+    <properties>
+        <java.version>14</java.version>
+        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <jap-processor.version>1.0.0</jap-processor.version>
+        <!-- JAP -->
+        <jpa-logTODO>com.processor.log_todo.LogTODOProcessor</jpa-logTODO>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.processor</groupId>
+            <artifactId>processor</artifactId>
+            <version>${jap-processor.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>${maven-clean-plugin.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--
+              To force clean the project in every compilation/package. In that way,
+              the warning/error messages related with JAP will always displayed.
+            -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven-clean-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <showWarnings>true</showWarnings>
+                    <compilerReuseStrategy>alwaysNew</compilerReuseStrategy>
+                    <annotationProcessors>
+                        <annotationProcessor>
+                            ${jpa-logTODO}
+                        </annotationProcessor>
+                    </annotationProcessors>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
