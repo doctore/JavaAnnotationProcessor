@@ -27,13 +27,11 @@
             <artifactId>processor</artifactId>
             <version>${jap-processor.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-clean-plugin</artifactId>
             <version>${maven-clean-plugin.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
