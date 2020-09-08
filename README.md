@@ -9,7 +9,7 @@
     
 ## Why was this project created?
 
-Basically to know how to create custom Java annotation processors and use them in other projects, providing custom behaviour for every one.
+Basically to know how to create new Java annotation processors and use them in other projects, providing custom behaviour for every one.
 
 ## Elements included in this project
 
