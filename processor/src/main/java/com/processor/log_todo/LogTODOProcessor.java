@@ -19,7 +19,7 @@ import static java.lang.String.format;
 public class LogTODOProcessor extends AbstractProcessor {
 
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        for ( Element element : roundEnv.getElementsAnnotatedWith(LogTODO.class) ) {
+        for (Element element : roundEnv.getElementsAnnotatedWith(LogTODO.class)) {
             displayMessage(element);
         }
         return true;
