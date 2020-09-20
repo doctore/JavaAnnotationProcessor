@@ -18,7 +18,7 @@
 
         <jap-processor.version>1.0.0</jap-processor.version>
         <!-- JAP -->
-        <jpa-logTODO>com.processor.log_todo.LogTODOProcessor</jpa-logTODO>
+        <jap-logTODO>com.processor.log_todo.LogTODOProcessor</jap-logTODO>
     </properties>
 
     <dependencies>
@@ -68,7 +68,7 @@
                     <showWarnings>true</showWarnings>
                     <annotationProcessors>
                         <annotationProcessor>
-                            ${jpa-logTODO}
+                            ${jap-logTODO}
                         </annotationProcessor>
                     </annotationProcessors>
                 </configuration>
